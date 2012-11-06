@@ -1,0 +1,93 @@
+<?php
+$installForm->prepare();
+?>
+<div class="block">
+
+    <div class="block-head">
+        <h2>Installation</h2>
+    </div>
+
+    <div class="block-content">
+
+        <?php echo $this->form()->openTag($installForm); ?>
+        <fieldset>
+            <legend>Database</legend>
+            <div class="control-group">
+                <label class="control-label" for="content">Type</label>
+                <div class="controls">
+                    <?php echo $this->formSelect($installForm->get('type')); ?>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="host">Server</label>
+                <div class="controls">
+                    <?php echo $this->formText($installForm->get('server')); ?>
+                    <span class="help-inline"></span>
+                    <?php echo $this->formElementErrors($installForm->get('server')); ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="port">Port</label>
+                <div class="controls">
+                    <?php echo $this->formText($installForm->get('port')); ?>
+                    <span class="help-inline"></span>
+                    <?php echo $this->formElementErrors($installForm->get('port')); ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="database">Database</label>
+                <div class="controls">
+                    <?php echo $this->formText($installForm->get('database')); ?>
+                    <span class="help-inline"></span>
+                    <?php echo $this->formElementErrors($installForm->get('database')); ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="title">Username</label>
+                <div class="controls">
+                    <?php echo $this->formText($installForm->get('username')); ?>
+                    <span class="help-inline"></span>
+                    <?php echo $this->formElementErrors($installForm->get('username')); ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="title">Password</label>
+                <div class="controls">
+                    <?php echo $this->formPassword($installForm->get('password')); ?>
+                    <span class="help-inline"></span>
+                    <?php echo $this->formElementErrors($installForm->get('password')); ?>
+                </div>
+            </div>
+        </fieldset>
+        <!--
+        <fieldset>
+            <legend>Admin account</legend>
+            <div class="control-group">
+                <label class="control-label" for="title">Username</label>
+                <div class="controls">
+        <?php echo $this->formText($installForm->get('username')); ?>
+                    <span class="help-inline"></span>
+        <?php echo $this->formElementErrors($installForm->get('username')); ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="title">Password</label>
+                <div class="controls">
+        <?php echo $this->formPassword($installForm->get('password')); ?>
+                    <span class="help-inline"></span>
+        <?php echo $this->formElementErrors($installForm->get('password')); ?>
+                </div>
+            </div>
+        </fieldset>
+        -->
+        <div class="control-group">
+            <div class="controls">
+                <?php echo $this->formSubmit($installForm->get('submit')); ?>
+            </div>
+        </div>
+        <?php echo $this->form()->closeTag(); ?>
+
+    </div>
+
+</div>

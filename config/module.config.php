@@ -1,21 +1,12 @@
 <?php
 
 return array(
-
+    
+    /**
+     * Router
+     */
 	'router' => array(
 		'routes' => array(
-//			'socialog-install-catchall' => array(
-//				'type' => 'regex',
-//				'priority' => 1000,
-//				'options' => array(
-//					'regex' => '/(?<catchall>.*)',
-//					'defaults' => array(
-//						'controller'	=> 'socialog_install',
-//						'action'		=> 'index',
-//					),
-//					'spec' => '/%catchall%',
-//				),
-//			),
 			'socialog-install' => array(
                 'type' => 'Segment',
                 'options' => array(
@@ -45,6 +36,15 @@ return array(
     'view_manager' => array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+    ),
+    
+    'socialog-install' => array(
+        'templates' => array(
+            'database' => include __DIR__ . '/template/database.php',
+        ),
+        'data' => array(
+            'mysql' => __DIR__ . '/../data/install_mysql.sql',
         ),
     ),
 );
